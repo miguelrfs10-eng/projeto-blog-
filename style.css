@@ -1,0 +1,375 @@
+:root {
+  --blue-dark: #0A4C8A;
+  --blue: #007BFF;
+  --blue-light: #E6F5FF;
+  --white: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Poppins', sans-serif;
+  background: var(--blue-light);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.container {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 24px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(10, 76, 138, 0.08);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(10, 76, 138, 0.12);
+  position: sticky;
+  top: 16px;
+  z-index: 30;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand h1 {
+  font-size: 22px;
+  letter-spacing: 0.4px;
+}
+
+
+.nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.18s ease;
+}
+
+.nav a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid #f0f4ff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(10, 76, 138, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(10, 76, 138, 0.09);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: var(--blue-dark);
+  margin-bottom: 6px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+.infographic {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  background: linear-gradient(180deg, #f7fbff, #ffffff);
+  border-radius: 10px;
+  border: 1px solid #e6f3ff;
+}
+
+.infographic svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 123, 255, 0.12);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 42px rgba(0, 123, 255, 0.18);
+}
+
+
+.footer {
+  margin-top: 28px;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .container {
+    margin: 18px;
+    padding: 18px;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(0, 62, 177);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav a {
+    padding: 1rem;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .header {
+    position: relative;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #000a42;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(0, 11, 107);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 32, 138, 0.1);
+    z-index: 1000;
+  }
+
+  .nav a {
+    padding: 1rem;
+    border-bottom: 1px solid #100057;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .container, main, section {
+    padding: 1rem;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #0a2a5c;
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0046a0;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 40px;
+}
+
+.linha {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.icone {
+  width: 60px;
+  height: 60px;
+  background-color: #0046a0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 20px;
+  position: relative;
+}
+
+.icone img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.linha::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  width: 2px;
+  height: calc(100% - 60px);
+  background-color: #0046a0;
+}
+
+.linha:last-child::before {
+  display: none;
+}
+
+.texto h2 {
+  color: #0046a0;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.texto p {
+  font-size: 0.95em;
+  color: #222;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+ul {
+  margin: 5px 0 0 20px;
+  color: #222;
+  font-size: 0.95em;
+}
+
+@media (max-width: 600px) {
+  .linha {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .linha::before {
+    left: 30px;
+  }
+
+  .icone {
+    margin-bottom: 10px;
+  }
+}
